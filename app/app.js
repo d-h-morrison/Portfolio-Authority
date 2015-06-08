@@ -5,8 +5,10 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version',
+    'ui.router'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider','$urlRouterProvider', function($routeProvider, $urlRouterProvider) {
+          //$routeProvider.otherwise({redirectTo: '/view1'});
+      $urlRouterProvider.otherwise(  '/view1');
 }]);
