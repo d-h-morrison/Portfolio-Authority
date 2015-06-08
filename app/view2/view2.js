@@ -11,4 +11,5 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('View2Ctrl', [function() {
     //alert("View2 Active!");  /* Enable alert to see if this is a functional controller. */
+
 }]);
