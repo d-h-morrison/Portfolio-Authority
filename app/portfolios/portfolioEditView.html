@@ -1,0 +1,36 @@
+<!--Panel surrounding report parameters section.-->
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size: large">
+        {{vm.title}} By Golly!
+    </div>
+
+    <!--Tab views for various reports-->
+    <div class="panel-body">
+        <div class="wizard">
+            <a ui-sref=".info"
+               ui-sref-active="active">
+                Portfolio Information
+            </a>
+            <div class="wizard">
+                <a ui-sref=".info"
+                   ui-sref-active="active">
+                    FOO
+                </a>
+                <a ui-sref=".price"
+                   ui-sref-active="active">
+                    Bar Report
+                </a>
+                <a ui-sref=".tags"
+                   ui-sref-active="active">
+                    FOOBar Report
+                </a>
+            </div>
+
+            <div ui-view></div>
+        </div>
+
+    </div>
+    <!--End Tab views for various reports.-->
+
+</div>
+<!--End panel surrounding report parameters.-->
