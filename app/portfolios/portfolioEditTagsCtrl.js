@@ -22,12 +22,12 @@
                 vm.newTags = "";
             }
             else{
-                alert("Please enter one or more tags separated by commas.");
+                //alert("Please enter one or more tags separated by commas.");
             }
         };
 
         vm.removeTag = function(tagIndex){
-            //debugger;
+            ////debugger;
             //var tags = vm.portfolio.tags;
             vm.portfolio.tags.splice(tagIndex,1);
         }

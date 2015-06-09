@@ -10,7 +10,15 @@
                              "ui.router", // Most full-featured Angular router based on named, nested and parallel views.
                              "ui.mask",  // Angular utility class for masking data entry fields.
                              "ui.bootstrap", // Bootstrap UI utilities.
-                             "portfolioResourceMock"] /*use mock data until the back end is done*/ );
+                             "portfolioResourceMock",
+                             "portfolioHistoricalDetailMock"] /*use mock data until the back end is done*/ );
+
+    // This filter makes the assumption that the input will be in decimal form (i.e. 17% is 0.17).
+    app.filter('percentage', ['$filter', function ($filter) {
+        return function (input, decimals) {
+            return $filter('number')(input * 100, decimals) + '%';
+        };
+    }]);
 
     app.config(["$stateProvider",
                 "$urlRouterProvider",
@@ -89,7 +97,17 @@
                         .state("portfolioReport.historicalDetail",{
                             url:"/info",
                             templateUrl: "app/portfolios/portfolioHistoricalDetailReportView.html",
-                            controller: "PortfolioHistoricalDetailReportCtrl as vm"})
+                            controller: "PortfolioHistoricalDetailReportCtrl as vm",
+                            resolve: {
+                                PortfolioHistoricalDetail: "PortfolioHistoricalDetail",
+                                portfolioHistory: function (PortfolioHistoricalDetail, $stateParams) {
+                                    //alert("In 'portfolioReport.historicalDetail' state.");
+                                    //debugger;
+                                    var portfolioId = $stateParams.portfolioId;
+                                    return PortfolioHistoricalDetail.get({portfolioId: portfolioId}).$promise;
+                                    }
+                                }
+                            })
 
 
                         .state("portfolioReport.historicalTransaction",{

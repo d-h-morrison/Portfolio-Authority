@@ -4,15 +4,15 @@
 
 (function () {
     "use strict";
-//debugger;
+////debugger;
     angular.module("Port-Authority")
         .controller("PortfolioHistoricalDetailReportCtrl",
-        ["portfolioResource",
+        ["PortfolioHistoricalDetail",
             "$state",
             PortfolioHistoricalDetailReportCtrl ]
     );
 
-    function PortfolioHistoricalDetailReportCtrl(portfolioResource,$state) {
+    function PortfolioHistoricalDetailReportCtrl(PortfolioHistoricalDetail,$state) {
         var vm = this;
         //vm.searchCriteria = "GDN";
 
@@ -22,8 +22,9 @@
             }
         );*/
 
+        //debugger;
         // Query the Mock data source.
-        portfolioResource.query(function(data){
+        PortfolioHistoricalDetail.query(function(data){
             vm.portfolios = data;
         });
 

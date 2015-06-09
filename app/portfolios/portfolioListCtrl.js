@@ -15,7 +15,7 @@
       // Ask angular to pass a reference to the portfolioResource service to this specific controller function.
       // We do this by adding the portfolioResource as a parameter.
       function PortfolioListCtrl(portfolioResource){
-          debugger;
+          ////debugger;
           // Define Model
           var vm = this;
 

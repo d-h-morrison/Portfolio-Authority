@@ -4,13 +4,16 @@
 
 (function () {
     "use strict";
-
+//debugger;
     angular
         .module("common.services")
-        .factory("portfolioHistoricalDetail",["$resource", portfolioHistoricalDetail]);
+        .factory("PortfolioHistoricalDetail",["$resource", PortfolioHistoricalDetail]);
 
-    function portfolioHistoricalDetail($resource){
-        return $resource("/api/portfolios/:portfolioId")
+    function PortfolioHistoricalDetail($resource){
+        //debugger;
+        return $resource("/api/portfolioHistoricalDetail/:portfolioId")
     }
+
+
 
 }());

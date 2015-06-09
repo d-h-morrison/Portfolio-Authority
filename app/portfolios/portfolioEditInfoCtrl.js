@@ -33,12 +33,12 @@
         }
 
         vm.save = function(){
-            //alert("trying to save...");
+            ////alert("trying to save...");
             vm.portfolio.$save();
         }
 
         vm.cancel = function(){
-            //alert("trying to cancel...");
+            ////alert("trying to cancel...");
             // on cancel, return to portfolio list state...
             $state.go('portfolioList');
         }

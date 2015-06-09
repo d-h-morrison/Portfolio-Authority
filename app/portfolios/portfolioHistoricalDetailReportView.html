@@ -44,19 +44,34 @@
 
             <thead>
             <tr>
-                <th>Portfolio</th>
-                <th>Code</th>
-                <th>Available</th>
+                <th>Fund Name</th>
+                <th>End Date</th>
+                <th>Monthly Return</th>
+                <th>Quarterly Return</th>
+                <th>YTD Return</th>
+                <th>ACB</th>
                 <th>NAV</th>
+                <!--                "portfolioId": 1,
+                "fundName": "Norm Fund",
+                "marketValue": 4345,
+                "monthlyReturn": 3.5,
+                "quarterlyReturn": 3.1,
+                "yTd": 3.0,
+                "aCb": 1.3,
+                "nAv": 1234,
+                "endDate": "12-31-04"-->
             </tr>
             </thead>
             <tbody>
             <!--binding directive e.g.: "{{product.productName}}"-->
             <tr ng-repeat="portfolio in vm.portfolios">
-                <td>{{ portfolio.portfolioName}}</td>
-                <td>{{ portfolio.portfolioId }}</td>
-                <td>{{ portfolio.releaseDate | date }}</td>
-                <td>{{ portfolio.NAV | currency }}</td>
+                <td>{{ portfolio.fundName}}</td>
+                <td>{{ portfolio.endDate | date}}</td>
+                <td>{{ portfolio.monthlyReturn | percentage:2 }}</td>
+                <td>{{ portfolio.quarterlyReturn | percentage:2 }}</td>
+                <td>{{ portfolio.yTd | percentage:2}}</td>
+                <td>{{ portfolio.aCb }}</td>
+                <td>{{ portfolio.nAv | currency  }}</td>
             </tr>
             </tbody>
         </table>

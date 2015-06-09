@@ -12,7 +12,7 @@
             PortfolioReportCtrl]); // Controller instance.
 
     function PortfolioReportCtrl(portfolio /*Inject the portfolio from the portfolioResource service*/){
-       // debugger;
+       // //debugger;
         var vm = this;
         vm.portfolio = portfolio;
 

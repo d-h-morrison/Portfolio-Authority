@@ -5,105 +5,226 @@
 (function () {
     "use strict";
 
+    //alert("In the portfolioHistoricalDetailMock.js service!!");
+    //debugger;
     var app = angular
         .module("portfolioHistoricalDetailMock",
         ["ngMockE2E"]);
 
     app.run(function ($httpBackend) {
 
-        var portfolios;
-        portfolios = [
+        //Market Value, Monthly Return, Quarterly Return, YTD, ACB
+        var portfolioHistoricalDetails;
+        portfolioHistoricalDetails = [
             {
                 "portfolioId": 1,
-                "portfolioName": "Leaf Rake Group",
-                "portfolioCode": "GDN-0011",
-                "releaseDate": "March 19, 2009",
-                "description": "Leaf Rake. Private Wealth Fund.",
-                "cost": 9.00,
-                "NAV": 19.95,
-                "category": "garden",
-                "tags": ["leaf", "tool"],
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-01"
+
+            },
+            {
+                "portfolioId": 1,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-04"
+
+            },
+            {
+                "portfolioId": 1,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "09-31-07"
+
+            },
+            {
+                "portfolioId": 1,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-07"
+
+            },
+            {
+                "portfolioId": 1,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-09"
+
+            },
+            {
+                "portfolioId": 1,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-10"
+
             },
             {
                 "portfolioId": 5,
-                "portfolioName": "Hammer, MC",
-                "portfolioCode": "TBX-0048",
-                "releaseDate": "May 21, 2013",
-                "description": "Curved Claw Steel Hammer.  Private Family.",
-                "cost": 1.00,
-                "NAV": 8.99,
-                "category": "toolbox",
-                "tags": ["tool"],
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-01"
+
+            },
+            {
+                "portfolioId": 5,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-02"
+
+            },
+            {
+                "portfolioId": 5,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-04"
+
             },
             {
                 "portfolioId": 2,
-                "portfolioName": "Garden Cart Consortium",
-                "portfolioCode": "GDN-0023",
-                "releaseDate": "March 18, 2010",
-                "description": "Rolling Garden Cart. Private Investor.",
-                "cost": 20.00,
-                "NAV": 32.99,
-                "category": "garden",
-                "tags": ["barrow", "cart", "wheelbarrow"],
-                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-01"
+
+            },
+            {
+                "portfolioId": 2,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-03"
+
+            },
+            {
+                "portfolioId": 2,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-05"
+
             },
             {
                 "portfolioId": 6,
-                "portfolioName": "Russian T-14 Armata G.P.",
-                "portfolioCode": "RMS-0945",
-                "releaseDate": "May 30, 2014",
-                "description": "Battle Ready T-14.  Ammunition must be purchased separately.  Sovereign Wealth Fund",
-                "cost": 45000000.00,
-                "NAV": 75000000.00,
-                "category": "arsenal",
-                "tags": ["tool", "military", "insurgence"],
-                "imageUrl": "https://openclipart.org/image/300px/svg_to_png/218607/T-14-Armata-by-Rones.png"
-            }
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-01"
+
+            },
+            {
+                "portfolioId": 6,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-02"
+
+            },
+            {
+                "portfolioId": 6,
+                "MarketValue": 4345,
+                "MonthlyReturn": 3.5,
+                "QuarterlyReturn": 3.1,
+                "YTD": 3.0,
+                "ACB": 1.3,
+                "NAV": 1234,
+                "EndDate": "12-31-03"
+
+            },
         ];
 
         var portfolioUrl = "/api/portfolios";
-        $httpBackend.whenGET(portfolioUrl).respond(portfolios);
-
+        $httpBackend.whenGET(portfolioUrl).respond(portfolioHistoricalDetails);
+        //debugger;
         // Define whenGET for extensible mocking using a regular expression.
         var editingRegex = new RegExp(portfolioUrl + "/[0-9][0-9]*",'');
         $httpBackend.whenGET(editingRegex).respond(function (method,url,data) {
-            var portfolio = {"portfolioId": 0};
+            var portfolioHistory = {"portfolioId": 0};
             var parameters = url.split('/');
             var length = parameters.length;
             var id = parameters[length - 1];
 
             if (id > 0) {
-                for (var i = 0; i < portfolios.length; i++) {
-                    if (portfolios[i].portfolioId == id) {
-                        portfolio = portfolios[i];
-                        break;
+
+                for (var i = 0; i < portfolioHistoricalDetails.length; i++) {
+                    if (portfolioHistoricalDetails[i].portfolioId == id) {
+                        portfolioHistory[i] = portfolioHistoricalDetails[i];
+                        //break;
                     }
                 }
             }
-            return [200, portfolio,{}];
+            return [200, portfolioHistory,{}];
         });
 
 // I.E. $save()...
         $httpBackend.whenPOST(portfolioUrl).respond(function (method,url,data) {
-            var portfolio = angular.fromJson(data);
-            //debugger;
-            if(!portfolio.portfolioId){
+            var portfolioHistory = angular.fromJson(data);
+            ////debugger;
+            if(!portfolioHistoricalDetails.portfolioId){
                 // New portfolio.  Assign id.
-                portfolio.portfolioId = portfolios[portfolios.length-1].portfolioId +1;
-                portfolios.push(portfolio);
+                portfolioHistory.portfolioId = portfolioHistoricalDetails[portfolioHistoricalDetails.length-1].portfolioId +1;
+                portfolioHistoricalDetails.push(portfolioHistory);
             }
             else{
-                for (var i = 0; i < portfolios.length; i++) {
-                    if (portfolios[i].portfolioId == portfolio.portfolioId) {
-                        portfolios[i] = portfolio;
+                for (var i = 0; i < portfolioHistoricalDetails.length; i++) {
+                    if (portfolioHistoricalDetails[i].portfolioId == portfolioHistory.portfolioId) {
+                        portfolioHistoricalDetails[i] = portfolioHistory;
                         break;
                     }
                 }
             }
 
-            return [200, portfolio,{}];
+            return [200, portfolioHistory,{}];
         });
 
 
