@@ -5,4 +5,17 @@
 (function () {
     "use strict";
 
+    angular.module("Port-Authority")
+        .controller("PortfolioHistoricalDetailReportCtrl",
+        ["portfolio",
+            "$state",
+            PortfolioHistoricalDetailReportCtrl ]
+    );
+
+    function PortfolioHistoricalDetailReportCtrl(portfolio,$state) {
+        var vm = this;
+        vm.portfolio = portfolio;
+
+    }
+
 }());

@@ -5,4 +5,17 @@
 (function () {
     "use strict";
 
+    angular.module("Port-Authority")
+        .controller("PortfolioSleeveSetUpReportCtrl",
+        ["portfolio",
+            "$state",
+            PortfolioSleeveSetUpReportCtrl ]
+    );
+
+    function PortfolioSleeveSetUpReportCtrl(portfolio,$state) {
+        var vm = this;
+        vm.portfolio = portfolio;
+
+    }
+
 }());
