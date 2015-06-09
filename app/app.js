@@ -89,15 +89,8 @@
                         .state("portfolioReport.historicalDetail",{
                             url:"/info",
                             templateUrl: "app/portfolios/portfolioHistoricalDetailReportView.html",
-                            controller: "PortfolioHistoricalDetailReportCtrl as vm",
-                            resolve: {
-                                portfolioResource: "portfolioResource",
-                                portfolio: function(portfolioResource, $stateParams){
-                                    var portfolioId = $stateParams.portfolioId;
-                                    return portfolioResource.get({portfolioId: portfolioId}).$promise;
-                                }
-                            }
-                        })
+                            controller: "PortfolioHistoricalDetailReportCtrl as vm"})
+
 
                         .state("portfolioReport.historicalTransaction",{
                             url:"/info",
