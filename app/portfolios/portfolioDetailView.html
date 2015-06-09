@@ -25,8 +25,8 @@
                 <div class="col-md-6">{{vm.portfolio.cost|currency}}</div>
             </div>
             <div class="row">
-                <div class="col-md-2">Price:</div>
-                <div class="col-md-6">{{vm.portfolio.price|currency}}</div>
+                <div class="col-md-2">NAV:</div>
+                <div class="col-md-6">{{vm.portfolio.NAV|currency}}</div>
             </div>
             <div class="row">
                 <div class="col-md-2">Margin:</div>
@@ -52,9 +52,9 @@
             Back
         </a>
         <a class="btn btn-primary"
-           ui-sref="portfolioEdit.info({portfolioId: vm.portfolio.portfolioId})"
+           ui-sref="portfolioReports.info({portfolioId: vm.portfolio.portfolioId})"
            style="width:80px;margin-left:10px;">
-            Edit
+            Reports
         </a>
     </div>
 </div>

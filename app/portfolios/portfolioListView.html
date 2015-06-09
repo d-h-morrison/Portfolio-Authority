@@ -1,7 +1,7 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Portfolio List
+        Portfolio List portfolioListView.html.
     </div>
 
     <div class="panel-body">
@@ -15,7 +15,7 @@
                 <td>Portfolio</td>
                 <td>Code</td>
                 <td>Available</td>
-                <td>Price</td>
+                <td>NAV</td>
             </tr>
             </thead>
             <tbody>
@@ -32,9 +32,9 @@
                 </td>
                 <td>{{portfolio.portfolioCode}}</td>
                 <td>{{portfolio.releaseDate}}</td>
-                <td>{{portfolio.price | currency}}</td>
+                <td>{{portfolio.NAV | currency}}</td>
                 <td>
-                    <a class="btn btn-primary" ui-sref="portfolioEdit.info({portfolioId: portfolio.portfolioId})">
+                    <a class="btn btn-primary" ui-sref="portfolioReport.info({portfolioId: portfolio.portfolioId})">
                         Select Report
                     </a>
                 </td>
