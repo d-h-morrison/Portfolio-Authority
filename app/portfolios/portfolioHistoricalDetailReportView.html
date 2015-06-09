@@ -10,6 +10,9 @@
         Portfolio List
     </div>
 
+
+    <form class="form-horizontal" name="portfolioForm">
+        <fieldset>
     <div class="panel-body">
         <div class="btn-group">
 
@@ -39,7 +42,21 @@
                 <li><a href="#" onclick="$('#customers').tableExport({type:'png',escape:'false'});"> <img src='images/png.png' width='24px'> PNG</a></li>
                 <li><a href="#" onclick="$('#customers').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"> <img src='images/pdf.png' width='24px'> PDF</a></li>
             </ul>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label"
+                       for="inputId">Enter ID:</label>
+                <div class="col-md-10">
+                    <textarea class="form-control"
+                              id="inputId"
+                              placeholder="PortfolioId"
+                              rows="3"
+                              ng-model="vm.portfolio.portfolioId"></textarea>
+                </div>
+            </div>
+
         </div>
+
         <table class="table" id="customers">
 
             <thead>
@@ -75,7 +92,28 @@
             </tr>
             </tbody>
         </table>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            type="submit"
+                            ng-click="vm.run(vm.portfolios[0].portfolioId)">
+                        Boyah
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.clear()">
+                        Clear
+                    </button>
+                </span>
+            </div>
+        </div>
     </div>
+        </fieldset>
+</form>
     <div class="panel-footer">
 
     </div>

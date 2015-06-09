@@ -24,10 +24,25 @@
 
         //debugger;
         // Query the Mock data source.
-        PortfolioHistoricalDetail.query(function(data){
+/*        PortfolioHistoricalDetail.query(function(data){
             vm.portfolios = data;
-        });
+        });*/
 
+        vm.run = function(portfolioId){
+            debugger;
+            //$scope.data = [];
+            var state = $state;
+            var portfolioHistoricalDetail = PortfolioHistoricalDetail;
+            portfolioHistoricalDetail.query(function(data){
+                vm.portfolios = data;
+            });
+
+        }
+
+        vm.clear = function(){
+            debugger;
+            vm.portfolios = [];
+        }
 
     }
 
