@@ -11,8 +11,6 @@
     </div>
 
 
-    <form class="form-horizontal" name="portfolioForm">
-        <fieldset>
     <div class="panel-body">
         <div class="btn-group">
 
@@ -42,18 +40,6 @@
                 <li><a href="#" onclick="$('#customers').tableExport({type:'png',escape:'false'});"> <img src='images/png.png' width='24px'> PNG</a></li>
                 <li><a href="#" onclick="$('#customers').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"> <img src='images/pdf.png' width='24px'> PDF</a></li>
             </ul>
-
-            <div class="form-group">
-                <label class="col-md-4 control-label"
-                       for="inputId">Enter ID:</label>
-                <div class="col-md-10">
-                    <textarea class="form-control"
-                              id="inputId"
-                              placeholder="PortfolioId"
-                              rows="3"
-                              ng-model="vm.portfolio.portfolioId"></textarea>
-                </div>
-            </div>
 
         </div>
 
@@ -112,8 +98,7 @@
             </div>
         </div>
     </div>
-        </fieldset>
-</form>
+
     <div class="panel-footer">
 
     </div>

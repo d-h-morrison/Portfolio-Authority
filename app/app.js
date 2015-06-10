@@ -10,7 +10,7 @@
                              "ui.router", // Most full-featured Angular router based on named, nested and parallel views.
                              "ui.mask",  // Angular utility class for masking data entry fields.
                              "ui.bootstrap", // Bootstrap UI utilities.
-                             "portfolioResourceMock",
+                             "portfolioResourceMock", // Add Mock to portfolioResource for mock.
                              "portfolioHistoricalDetailMock"] /*use mock data until the back end is done*/ );
 
     // This filter makes the assumption that the input will be in decimal form (i.e. 17% is 0.17).
@@ -99,16 +99,31 @@
                             templateUrl: "app/portfolios/portfolioHistoricalDetailReportView.html",
                             controller: "PortfolioHistoricalDetailReportCtrl as vm",
                             resolve: {
-                                PortfolioHistoricalDetail: "PortfolioHistoricalDetail",
-                                portfolioHistory: function (PortfolioHistoricalDetail, $stateParams) {
+                                PortfolioHistoricalDetail: "portfolioResource",
+                                portfolioResource: "portfolioResource",
+                                portfolio: function (portfolioResource, PortfolioHistoricalDetail, $stateParams) {
                                     //alert("In 'portfolioReport.historicalDetail' state.");
-                                    //debugger;
+                                    debugger;
                                     var portfolioId = $stateParams.portfolioId;
-                                    return PortfolioHistoricalDetail.get({portfolioId: portfolioId}).$promise;
+                                    return portfolioResource.get({portfolioId: portfolioId}).$promise;
                                     }
                                 }
                             })
 
+                        /*  .state("portfolioReport.historicalDetail",{
+                            url:"/info",
+                            templateUrl: "app/portfolios/portfolioHistoricalDetailReportView.html",
+                            controller: "PortfolioHistoricalDetailReportCtrl as vm"
+                           resolve: {
+                                portfolioResource: "portfolioResource",
+                                PortfolioHistoricalDetail: "PortfolioHistoricalDetail",
+                                portfolio: function(portfolioResource, PortfolioHistoricalDetail, $stateParams){
+                                    debugger;
+                                    var portfolioId = $stateParams.portfolioId;
+                                    return portfolioResource.get({portfolioId: portfolioId}).$promise;
+                                }
+                            }
+                        })*/
 
                         .state("portfolioReport.historicalTransaction",{
                             url:"/info",

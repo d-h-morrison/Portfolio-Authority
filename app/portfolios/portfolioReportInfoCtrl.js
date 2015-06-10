@@ -15,7 +15,7 @@
 
     function PortfolioReportInfoCtrl(portfolio, $state){
         var vm = this;
-
+debugger;
         vm.portfolio = portfolio;
 ////debugger;
         if(vm.portfolio && vm.portfolio.portfolioId){

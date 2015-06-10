@@ -11,7 +11,7 @@
                         ["ngMockE2E"]);
     
     app.run(function ($httpBackend) {
-
+//debugger;
         var portfolios;
         var portfolioHistoricalDetails;
         portfolios = [
@@ -298,7 +298,7 @@
                 "imageUrl": "https://openclipart.org/image/300px/svg_to_png/218607/T-14-Armata-by-Rones.png"
             }
         ];*/
-
+//debugger;
         var portfolioUrl = "/api/portfolios";
         var historyDetailUrl = "/api/portfolioHistoricalDetail";
         $httpBackend.whenGET(portfolioUrl).respond(portfolios);
@@ -336,10 +336,12 @@
                 for (var i = 0; i < portfolioHistoricalDetails.length; i++) {
                     if (portfolioHistoricalDetails[i].portfolioId == id) {
                         portfolio = portfolioHistoricalDetails[i];
-                        //break;
+
+                        break;
                     }
                 }
             }
+            blah(id);
             return [200, portfolio,{}];
         });
 // I.E. $save()...
@@ -366,6 +368,7 @@
 
         // Pass any requests for application files through--don't intercept them.
         $httpBackend.whenGET(/app/).passThrough();
+
 
     })
 }());

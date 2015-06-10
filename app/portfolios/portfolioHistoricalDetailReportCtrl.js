@@ -7,13 +7,20 @@
 ////debugger;
     angular.module("Port-Authority")
         .controller("PortfolioHistoricalDetailReportCtrl",
-        ["PortfolioHistoricalDetail",
+        [
+            "portfolioResource",
+            "PortfolioHistoricalDetail",
             "$state",
             PortfolioHistoricalDetailReportCtrl ]
     );
 
-    function PortfolioHistoricalDetailReportCtrl(PortfolioHistoricalDetail,$state) {
+    function PortfolioHistoricalDetailReportCtrl(portfolioResource,PortfolioHistoricalDetail,$state) {
+        debugger;
         var vm = this;
+        vm.state = {};
+        vm.state.portfolioId = $state.params.portfolioId;
+        vm.portfolio = portfolioResource;
+
         //vm.searchCriteria = "GDN";
 
 /*        // Use Odata query to communicate with API backend.
@@ -22,7 +29,7 @@
             }
         );*/
 
-        //debugger;
+
         // Query the Mock data source.
 /*        PortfolioHistoricalDetail.query(function(data){
             vm.portfolios = data;
@@ -32,8 +39,14 @@
             debugger;
             //$scope.data = [];
             var state = $state;
-            var portfolioHistoricalDetail = PortfolioHistoricalDetail;
-            portfolioHistoricalDetail.query(function(data){
+/*            var portfolioHistoricalDetail = PortfolioHistoricalDetail;
+            /!*vm.portfolio*!/ portfolioHistoricalDetail.query(function(data){
+                alert("I think this is the portfolio id: "+ vm.state.portfolioId)
+                vm.portfolios = data;
+            });*/
+
+            PortfolioHistoricalDetail.query(function(data){
+                alert("I think this is the portfolio id: "+ vm.state.portfolioId)
                 vm.portfolios = data;
             });
 

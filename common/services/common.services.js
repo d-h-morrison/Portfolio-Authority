@@ -7,6 +7,8 @@
         "use strict";
         angular.module("common.services" /*name of the module*/,
                         ["ngResource"] /*ngResources dependency adds support for interacting with restful services.*/)
+
+
     }()
 
 );
